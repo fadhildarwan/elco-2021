@@ -1,4 +1,4 @@
-<?= $this->extend('templates_voters/index');?>
+<?= $this->extend('templates_admin/index');?>
 
 <?= $this->section('title');?>
 <title>Dashboard | Elco</title>

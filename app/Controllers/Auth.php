@@ -13,7 +13,7 @@ class Auth extends BaseController
     public function login()
     {
         if(session('id_login')) {
-            return redirect()->to(site_url('/'));
+            return redirect()->to(site_url('dashboard'));
         }
         return view('auth/login');
     }
@@ -30,7 +30,7 @@ class Auth extends BaseController
             if(password_verify($password, $user->password)) {
                 $params = ['id_login' => $user->id_login];
                 session()->set($params);
-                return redirect()->to(site_url('/'));
+                return redirect()->to(site_url('dashboard'));
             } else {
                 return redirect()->back()->with('error', 'Password Tidak Sesuai');
             }
