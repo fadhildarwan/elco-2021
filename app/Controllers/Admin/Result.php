@@ -77,7 +77,7 @@ class Result extends BaseController
             ]);
 
             session()->setFlashdata('message', 'Terimakasih telah melakukan pemilihan');
-            return redirect()->to('vote');
+            return redirect()->to('votee');
         }
     }
 }
