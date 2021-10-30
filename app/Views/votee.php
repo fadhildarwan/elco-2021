@@ -16,6 +16,9 @@
     <link href="<?= base_url(); ?>/css/sb-admin-2.min.css" rel="stylesheet">
 </head>
 <body>
+
+<?= $this->include('templates_voters/topbar');?>
+
 <div class="container-fluid">
 
 <!-- Page Heading -->
