@@ -59,7 +59,7 @@
             datasets: [{
                 label: '<?php $vote = $result_id/$voters_list*$persen; $output = number_format($vote, 2, '.', ''); echo $output; ?> % of Votes',
                 // data: [12, 19],
-                data: data_vote_paslon,
+                data: [data_vote_paslon],
                 backgroundColor: [
                     'rgba(255, 99, 132, 0.2)',
                     'rgba(54, 162, 235, 0.2)',
