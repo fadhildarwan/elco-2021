@@ -32,6 +32,7 @@ class Result extends BaseController
             'pager' => $this->result->pager,
             'nomor' => nomor($this->request->getVar('page_tb_vote'), 25),
             'result_paslon' => $this->result->select('vote, COUNT(*) as jumlah')->groupBy('vote')->get(),
+            // 'result_paslon' => $this->result->select('vote, COUNT(*) as jumlah')->groupBy('vote')->get(),
             // 'result_blank' => $this->result->select('vote, COUNT(*) as jumlah')->where('vote="blank"')->get(),
             'result_id' => $this->result->result_all(),
             'voters_list' => $this->voters->voters_list(),
