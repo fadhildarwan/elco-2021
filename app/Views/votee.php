@@ -22,7 +22,91 @@
 <div class="container-fluid">
 
 <!-- Page Heading -->
-<h1 class="h3 mb-4 text-gray-800">Electoral Commission 2021</h1>
+<h1 class="h3 mb-4 text-gray-800"><b>Electoral Commission</b> Gamapi 2021</h1>
+
+<div class="row">
+
+<!-- Earnings (Monthly) Card Example -->
+<div class="col-xl-3 col-md-6 mb-4">
+    <div class="card border-left-primary shadow h-100 py-2">
+        <div class="card-body">
+            <div class="row no-gutters align-items-center">
+                <div class="col mr-2">
+                    <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
+                       Candidate</div>
+                    <div class="h5 mb-0 font-weight-bold text-gray-800">1</div>
+                </div>
+                <div class="col-auto">
+                    <i class="fas fa-user-tie fa-2x text-gray-300"></i>
+                </div>
+           </div>
+        </div>
+    </div>
+</div>
+
+<!-- Earnings (Monthly) Card Example -->
+<div class="col-xl-3 col-md-6 mb-4">
+    <div class="card border-left-success shadow h-100 py-2">
+        <div class="card-body">
+            <div class="row no-gutters align-items-center">
+                <div class="col mr-2">
+                    <div class="text-xs font-weight-bold text-success text-uppercase mb-1">
+                        Voters</div>
+                    <div class="h5 mb-0 font-weight-bold text-gray-800"><?= $voters_list; ?></div>
+                </div>
+                <div class="col-auto">
+                    <i class="fas fa-users fa-2x text-gray-300"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Earnings (Monthly) Card Example -->
+<div class="col-xl-3 col-md-6 mb-4">
+    <div class="card border-left-info shadow h-100 py-2">
+        <div class="card-body">
+            <div class="row no-gutters align-items-center">
+                <div class="col mr-2">
+                    <div class="text-xs font-weight-bold text-info text-uppercase mb-1">Vote Progress
+                        </div>
+                        <div class="row no-gutters align-items-center">
+                        <div class="col-auto">
+                            <div class="h5 mb-0 mr-3 font-weight-bold text-gray-800"><?php $vote = $result_id/$voters_list*$persen; $output = number_format($vote, 2, '.', ''); echo $output; ?>%</div>
+                        </div>
+                        <div class="col">
+                            <div class="progress progress-sm mr-2">
+                                <div class="progress-bar bg-info" role="progressbar" style="width: <?php $vote = $result_id/$voters_list*$persen; $output = number_format($vote, 2, '.', ''); echo $output; ?>%" aria-valuenow="<?php $vote = $result_id/$voters_list*$persen; $output = number_format($vote, 2, '.', ''); echo $output; ?>" aria-valuemin="0" aria-valuemax="100"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-auto">
+                    <i class="fas fa-spinner fa-2x text-gray-300"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Pending Requests Card Example -->
+<div class="col-xl-3 col-md-6 mb-4">
+    <div class="card border-left-warning shadow h-100 py-2">
+        <div class="card-body">
+            <div class="row no-gutters align-items-center">
+                <div class="col mr-2">
+                    <div class="text-xs font-weight-bold text-warning text-uppercase mb-1">
+                        Elco Committee</div>
+                    <div class="h5 mb-0 font-weight-bold text-gray-800">22</div>
+                </div>
+                <div class="col-auto">
+                    <i class="fas fa-users-cog fa-2x text-gray-300"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
 
 <div class="card shadow mb-4">
         <div class="card-header py-3">
@@ -139,7 +223,7 @@
 
             <div class="form-group text-justify col-md-6">
                 <label for="kode_unik">Kode Unik *</label>
-                <input type="text" name="kode_unik" id="kode_unik" class="form-control" maxlength="5" minlength="5" value="<?= old('kode_unik');?>" placeholder="kode unik berisikan 5 karakter (KAPITAL)" autofocus>
+                <input type="text" name="kode_unik" id="kode_unik" class="form-control" maxlength="5" minlength="5" value="<?= old('kode_unik');?>" placeholder="(KAPITAL) kode unik berisikan 5 karakter" autofocus>
             </div>
 
             <div class="row row-cols-1 row-cols-md-2 g-4">
