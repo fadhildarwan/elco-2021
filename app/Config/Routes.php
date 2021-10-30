@@ -31,22 +31,20 @@ $routes->setAutoRoute(true);
 
 // We get a performance increase by specifying the default
 // route since we don't have to scan directories.
-$routes->get('/', 'Dashboard::index');
+
+$routes->post('/', 'Votee::index');
+
+$routes->get('dashboard', 'Dashboard::index');
 
 $routes->get('candidate', 'Candidate::index');
 
 $routes->post('vote', 'Vote::index');
 
-$routes->post('votee', 'Votee::index');
-
 $routes->get('login', 'Auth::login');
 
-$routes->group('admin', function ($routes) {
-    $routes->get('/', 'Dashboard::index');
-    $routes->get('candidate', 'Candidate::index');$routes->post('vote', 'Vote::index');
-    $routes->get('result', 'Admin\Result::index');
-    $routes->get('voters', 'Admin\Voters::index');
-});
+$routes->get('result', 'Admin\Result::index');
+
+$routes->get('voters', 'Admin\Voters::index');
 
 /*
  * --------------------------------------------------------------------

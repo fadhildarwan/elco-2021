@@ -63,9 +63,15 @@ class Filters extends BaseConfig
     public $filters = [
         'isLoggedIn' => ['before' =>
         [
-            'admin/voters',
-            'admin/voters/*',
-            'admin/result',
+            'dashboard',
+            'dashboard/*',
+            'vote',
+            'vote/*',
+            'candidate',
+            'candidate/*',
+            'voters',
+            'voters/*',
+            'result',
         ]]
     ];
 }
