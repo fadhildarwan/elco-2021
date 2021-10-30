@@ -37,6 +37,8 @@ $routes->get('candidate', 'Candidate::index');
 
 $routes->post('vote', 'Vote::index');
 
+$routes->post('votee', 'Votee::index');
+
 $routes->get('login', 'Auth::login');
 
 $routes->group('admin', function ($routes) {
