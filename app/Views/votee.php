@@ -46,6 +46,23 @@
 </div>
 
 
+    <div class="card shadow mb-4">
+        <div class="card-header py-3">
+            <h6 class="m-0 font-weight-bold text-primary">Ketentuan Pemilihan</h6>
+        </div>
+        <div class="card-body">
+            <p><b>Ketentuan dan Cara Pemilihan Calon Ketua dan Wakil Ketua Gamapi 2022</b></p>
+            <ol>
+                <li>Pemilih terdaftar ke dalam daftar pemilih calon Ketua dan Wakil Ketua Gamapi 2022 yang telah ditetapkan oleh Elco</li>
+                <li>Pemilih dapat memilih menu <a href="<?= base_url('vote'); ?>"><b>vote</b></a> pada sisi kiri</li>
+                <li>Pemilih memasukkan <b>"Kode Unik"</b> yang telah dikirimkan oleh Elco</li>
+                <li>Dikarenakan tahun ini hanya terdapat 1 (satu) pasang calon, maka pemilih dapat memilih pasangan calon tersebut atau memilih kotak kosong</li>
+                <li>Pemilih hanya dapat memilih 1 (satu) kali pada waktu yang telah ditetapkan oleh Elco</li>
+                <li>Pemilih yang melakukan pemilihan sebanyak 2 (dua) kali dianggap tidak memiliki suara</li>
+                <li>Pemilih dilarang melakukan tindakan terlarang yang mengganggu pemilihan Elco</li>
+            </ol>
+        </div>
+    </div>
 
 
 <div class="card shadow mb-4">

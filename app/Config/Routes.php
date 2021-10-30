@@ -39,8 +39,6 @@ $routes->post('vote', 'Vote::index');
 
 $routes->post('votee', 'Votee::index');
 
-$routes->post('coba', 'Coba::index');
-
 $routes->get('login', 'Auth::login');
 
 $routes->group('admin', function ($routes) {
