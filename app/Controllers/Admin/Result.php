@@ -62,7 +62,7 @@ class Result extends BaseController
                     ]
             ],
             'vote' => [
-                'rules' => 'required',
+                'rules' => '',
                 // 'errors' => [
                 //     'required' => 'Vote tidak boleh kosong',
                 // ]
