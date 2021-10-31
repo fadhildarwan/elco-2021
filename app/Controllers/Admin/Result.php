@@ -60,13 +60,13 @@ class Result extends BaseController
                         'in_list'  => 'Anda baru bisa memilih pukul 08.00 WIB pada tanggal 1-3 November 2021',
                         
                     ]
-            ],
-            'vote' => [
-                'rules' => '',
-                // 'errors' => [
-                //     'required' => 'Vote tidak boleh kosong',
-                // ]
-            ],
+            // ],
+            // 'vote' => [
+            //     'rules' => '',
+            //     'errors' => [
+            //         'required' => 'Vote tidak boleh kosong',
+            //     ]
+            // ],
             
         ])) {
             session()->setFlashdata('error', $this->validator->listErrors());
