@@ -26,15 +26,10 @@
             <li>
             <?php foreach($result_paslon->getResult() as $value): ?>
                 Total Paslon 1 (<?php $vote=$value->jumlah/$voters_list*$persen; $output = number_format($vote, 2, '.', ''); echo $output; ?>) %
-            <div class="col">
-                <div class="progress progress-sm mr-2">
-                    <div class="progress-bar bg-info" role="progressbar" style="width: <?php $vote=$value->jumlah/$voters_list*$persen; $output = number_format($vote, 2, '.', ''); echo $output; ?>;" aria-valuenow="<?php $vote=$value->jumlah/$voters_list*$persen; $output = number_format($vote, 2, '.', ''); echo $output; ?>" aria-valuemin="0" aria-valuemax="100"></div>
-                </div>
-            </div>
             <?php endforeach ?>
-            </li><br>
+            </li>
             <li><?php foreach($result_blank->getResult() as $value): ?>
-                Total Kotak Kosong (<?= $vote=$value->jumlah/$voters_list*$persen;?>) %
+                Total Kotak Kosong (<?= $vote=$value->jumlah/$voters_list*$persen; $hasil = number_format($vote, 2, '.', ''); echo $hasil; ?>) %
             <?php endforeach ?></li>
         </ol>
         <p>Data dihitung berdasarkan jumlah</p>
