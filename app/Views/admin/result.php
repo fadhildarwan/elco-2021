@@ -23,9 +23,16 @@
         <p><b>Keterangan :</b></p>
         <p>Data dihitung dalam persen (%)</p>
         <ol>
-            <li><?php foreach($result_paslon->getResult() as $value): ?>
+            <li>
+            <?php foreach($result_paslon->getResult() as $value): ?>
                 Total Paslon 1 (<?php $vote=$value->jumlah/$voters_list*$persen; $output = number_format($vote, 2, '.', ''); echo $output; ?>) %
-            <?php endforeach ?></li>
+            <?php endforeach ?>
+            <div class="col">
+                <div class="progress progress-sm mr-2">
+                    <div class="progress-bar bg-info" role="progressbar" style="width: <?php foreach($result_paslon->getResult() as $value): ?> <?php $vote=$value->jumlah/$voters_list*$persen; $output = number_format($vote, 2, '.', ''); echo $output; ?><?php endforeach ?>" aria-valuenow="<?php foreach($result_paslon->getResult() as $value): ?> <?php $vote=$value->jumlah/$voters_list*$persen; $output = number_format($vote, 2, '.', ''); echo $output; ?><?php endforeach ?>" aria-valuemin="0" aria-valuemax="100"></div>
+                </div>
+            </div>
+            </li>
             <li><?php foreach($result_blank->getResult() as $value): ?>
                 Total Kotak Kosong (<?= $vote=$value->jumlah/$voters_list*$persen;?>) %
             <?php endforeach ?></li>
