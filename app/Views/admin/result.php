@@ -35,9 +35,9 @@
         <hr> <b>Vote Progress :</b> <?php $vote = $result_id/$voters_list*$persen; $output = number_format($vote, 2, '.', ''); echo $output; ?> % atau <?= $result_id; ?> voters dari <?= $voters_list; ?> voters<br>
         <b>Keterangan :</b>
             <li>Data dihitung dalam persen (%)</li>
-            <li>Pada data di bawah untuk sebelah kiri Paslon 1 dan sebelah kanan Kotak Kosong dalam persen (%)</li>
+            <li>Pada data di bawah untuk sebelah kiri Paslon 1 dan sebelah kanan Kotak Kosong</li>
             <li><?php foreach($result_paslon->getResult() as $value): ?>
-                Data (<?php $vote = $value->jumlah/$voters_list*$persen; $output = number_format($vote, 2, '.', ''); echo $output; ?>);
+                Data (<?php $vote = $value->jumlah; ?>);
             <?php endforeach ?></li>
     </div>
 </div>
