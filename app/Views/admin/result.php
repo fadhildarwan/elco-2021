@@ -27,8 +27,13 @@
                 Total Paslon 1 (<?php $vote=$value->jumlah/$voters_list*$persen; $output = number_format($vote, 2, '.', ''); echo $output; ?>) %
             <?php endforeach ?></li>
             <li><?php foreach($result_blank->getResult() as $value): ?>
-                Total Kotak Kosong (<?= $vote=$value->jumlah/$voters_list*$persen; $output = number_format($vote, 2, '.', ''); echo $output; ?>) %
+                Total Kotak Kosong (<?= $vote=$value->jumlah/$voters_list*$persen;?>) %
             <?php endforeach ?></li>
+        </ol>
+        <p>Data dihitung berdasarkan jumlah</p>
+        <ol>
+            <li>Total Paslon 2 (<?= $result_paslon; ?>)</li>
+            <li>Total Kotak Kosong (<?= $result_blank; ?>)</li>
         </ol>
     </div>
 </div>
