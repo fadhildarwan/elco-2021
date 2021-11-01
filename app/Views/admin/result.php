@@ -30,7 +30,32 @@
                 </div>
             </div>
         </div>
-            <canvas id="myChart" width="2106" height="640" style="display: block; width: 1053px; height: 320px;"></canvas>
+            <!-- Earnings (Monthly) Card Example -->
+        <div class="col-xl-3 col-md-6 mb-4">
+            <div class="card border-left-info shadow h-100 py-2">
+                <div class="card-body">
+                    <div class="row no-gutters align-items-center">
+                        <div class="col mr-2">
+                            <div class="text-xs font-weight-bold text-info text-uppercase mb-1">Vote Progress
+                                </div>
+                                <div class="row no-gutters align-items-center">
+                                <div class="col-auto">
+                                    <div class="h5 mb-0 mr-3 font-weight-bold text-gray-800"><?php $vote=$result_paslon/$voters_list*$persen; $output = number_format($vote, 2, '.', ''); echo $output; ?>%</div>
+                                </div>
+                                <div class="col">
+                                    <div class="progress progress-sm mr-2">
+                                        <div class="progress-bar bg-info" role="progressbar" style="width: <?php $vote=$result_paslon/$voters_list*$persen; $output = number_format($vote, 2, '.', ''); echo $output; ?>" aria-valuenow="<?php $vote=$result_paslon/$voters_list*$persen; $output = number_format($vote, 2, '.', ''); echo $output; ?>" aria-valuemin="0" aria-valuemax="100"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-auto">
+                            <i class="fas fa-spinner fa-2x text-gray-300"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
         </div>
         <hr> <b>Vote Progress :</b> <?php $vote = $result_id/$voters_list*$persen; $output = number_format($vote, 2, '.', ''); echo $output; ?> % atau <?= $result_id; ?> voters dari <?= $voters_list; ?> voters<br>
         <b>Keterangan :</b><br>
@@ -52,49 +77,7 @@
     </div>
 </div>
 
-<script src="<?= base_url(); ?>/js/chart.min.js"></script>
 
-    <script>
-    const ctx = document.getElementById('myChart');
-    const data_paslon = [];
-    const data_blank = [];
-
-    <?php foreach($result_paslon->getResult() as $value): ?>
-        data_paslon.push(<?php $vote = $value->jumlah/$voters_list*$persen; $output = number_format($vote, 2, '.', ''); echo $output; ?>);
-    <?php endforeach ?>
-    <?php foreach($result_blank->getResult() as $value): ?>
-        data_blank.push(<?php $vote = $value->jumlah/$voters_list*$persen; $output = number_format($vote, 2, '.', ''); echo $output; ?>);
-    <?php endforeach ?>
-
-    const myChart = new Chart(ctx, {
-        type: 'bar',
-        data: {
-            labels: ['Paslon 1', 'Blank'],
-            datasets: [{
-                label: '<?php $vote = $result_id/$voters_list*$persen; $output = number_format($vote, 2, '.', ''); echo $output; ?> % of Votes',
-                // data: [12, 19],
-                data: data_paslon, data_blank,
-                backgroundColor: [
-                    'rgba(255, 99, 132, 0.2)',
-                    'rgba(54, 162, 235, 0.2)',
-                ],
-                borderColor: [
-                    'rgba(255, 99, 132, 1)',
-                    'rgba(54, 162, 235, 1)',
-                ],
-            }]
-        },
-        options: {
-            scales: {
-                y: {
-                    beginAtZero: true,
-                    min: 0,
-                    max: 100,
-                }
-            }
-        }
-    });
-    </script>
 
 <div class="card-header">
     <?php if (!empty(session()->getFlashdata('message'))) : ?>
