@@ -56,6 +56,15 @@
 
     <script>
     const ctx = document.getElementById('myChart');
+    const data_paslon = [];
+    const data_blank = [];
+
+    <?php foreach($result_paslon->getResult() as $value): ?>
+        data_paslon.push(<?php $vote = $value->jumlah/$voters_list*$persen; $output = number_format($vote, 2, '.', ''); echo $output; ?>);
+    <?php endforeach ?>
+    <?php foreach($result_blank->getResult() as $value): ?>
+        data_blank.push(<?php $vote = $value->jumlah/$voters_list*$persen; $output = number_format($vote, 2, '.', ''); echo $output; ?>);
+    <?php endforeach ?>
 
     const myChart = new Chart(ctx, {
         type: 'bar',
@@ -64,7 +73,7 @@
             datasets: [{
                 label: '<?php $vote = $result_id/$voters_list*$persen; $output = number_format($vote, 2, '.', ''); echo $output; ?> % of Votes',
                 // data: [12, 19],
-                data: $result_paslon, $result_blank,
+                data: data_paslon, data_blank,
                 backgroundColor: [
                     'rgba(255, 99, 132, 0.2)',
                     'rgba(54, 162, 235, 0.2)',
