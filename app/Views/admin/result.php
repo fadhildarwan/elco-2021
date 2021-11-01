@@ -16,10 +16,11 @@
 
 <div class="card shadow mb-4">
     <div class="card-header py-3">
-        <h6 class="m-0 font-weight-bold text-primary">Ketentuan Pemilihan</h6>
+        <h6 class="m-0 font-weight-bold text-primary">Result</h6>
     </div>
     <div class="card-body">
-        <p><b>Ketentuan dan Cara Pemilihan Calon Ketua dan Wakil Ketua Gamapi 2022</b></p>
+        <p><b>Vote Progress :</b> <?php $vote = $result_id/$voters_list*$persen; $output = number_format($vote, 2, '.', ''); echo $output; ?> % atau <?= $result_id; ?> voters dari <?= $voters_list; ?> voters</p>
+        <p><b>Keterangan :</b></p>
         <ol>
             <li>Pemilih terdaftar ke dalam daftar pemilih calon Ketua dan Wakil Ketua Gamapi 2022 yang telah ditetapkan oleh Elco</li>
             <li>Pemilih dapat menggeser ke bawah untuk melakukan pemilihan</li>
