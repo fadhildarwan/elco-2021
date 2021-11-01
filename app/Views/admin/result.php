@@ -21,14 +21,14 @@
     <div class="card-body">
         <p><b>Vote Progress :</b> <?php $vote = $result_id/$voters_list*$persen; $output = number_format($vote, 2, '.', ''); echo $output; ?> % atau <?= $result_id; ?> voters dari <?= $voters_list; ?> voters</p>
         <p><b>Keterangan :</b></p>
+        <p>Data dihitung dalam persen (%)</p>
         <ol>
-            <li>Pemilih terdaftar ke dalam daftar pemilih calon Ketua dan Wakil Ketua Gamapi 2022 yang telah ditetapkan oleh Elco</li>
-            <li>Pemilih dapat menggeser ke bawah untuk melakukan pemilihan</li>
-            <li>Pemilih memasukkan <b>"Kode Unik"</b> yang telah dikirimkan oleh Elco</li>
-            <li>Dikarenakan tahun ini hanya terdapat 1 (satu) pasang calon, maka pemilih dapat memilih pasangan calon tersebut atau memilih kotak kosong</li>
-            <li>Pemilih hanya dapat memilih 1 (satu) kali pada waktu yang telah ditetapkan oleh Elco</li>
-            <li>Pemilih yang melakukan pemilihan sebanyak 2 (dua) kali dianggap tidak memiliki suara</li>
-            <li>Pemilih dilarang melakukan tindakan terlarang yang mengganggu pemilihan Elco</li>
+            <li><?php foreach($result_paslon->getResult() as $value): ?>
+                Total Paslon 1 (<?php $vote=$value->jumlah/$voters_list*$persen; $output = number_format($vote, 2, '.', ''); echo $output; ?>) %
+            <?php endforeach ?></li>
+            <li><?php foreach($result_blank->getResult() as $value): ?>
+                Total Kotak Kosong (<?= $vote=$value->jumlah/$voters_list*$persen; $output = number_format($vote, 2, '.', ''); echo $output; ?>) %
+            <?php endforeach ?></li>
         </ol>
     </div>
 </div>
