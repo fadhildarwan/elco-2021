@@ -37,7 +37,7 @@
             <li>Data dihitung dalam persen (%)</li>
             <li>Pada data di bawah untuk sebelah kiri Paslon 1 dan sebelah kanan Kotak Kosong</li>
             <li><?php foreach($result_paslon->getResult() as $value): ?>
-                Data (<?php $vote = $value->jumlah; ?>);
+                Data (<?php $value->jumlah; ?>);
             <?php endforeach ?></li>
     </div>
 </div>
