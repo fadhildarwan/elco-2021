@@ -52,8 +52,49 @@
     </div>
 </div>
 
-    
+<script src="<?= base_url(); ?>/js/chart.min.js"></script>
 
+    <script>
+    const ctx = document.getElementById('myChart');
+    const data_vote_paslon = [];
+    const data_vote_blank = [];
+    
+    <?php foreach($result_paslon->getResult() as $value): ?>
+        data_vote_paslon.push(<?php $vote = $value->jumlah/$voters_list*$persen; $output = number_format($vote, 2, '.', ''); echo $output; ?>);
+    <?php endforeach ?>
+    <?php foreach($result_blank->getResult() as $value): ?>
+        data_vote_blank.push(<?php $vote = $value->jumlah/$voters_list*$persen; $output = number_format($vote, 2, '.', ''); echo $output; ?>);
+    <?php endforeach ?>
+
+    const myChart = new Chart(ctx, {
+        type: 'bar',
+        data: {
+            labels: ['Paslon 1', 'Blank'],
+            datasets: [{
+                label: '<?php $vote = $result_id/$voters_list*$persen; $output = number_format($vote, 2, '.', ''); echo $output; ?> % of Votes',
+                // data: [12, 19],
+                data: [data_vote_paslon, data_vote_blank],
+                backgroundColor: [
+                    'rgba(255, 99, 132, 0.2)',
+                    'rgba(54, 162, 235, 0.2)',
+                ],
+                borderColor: [
+                    'rgba(255, 99, 132, 1)',
+                    'rgba(54, 162, 235, 1)',
+                ],
+            }]
+        },
+        options: {
+            scales: {
+                y: {
+                    beginAtZero: true,
+                    min: 0,
+                    max: 100,
+                }
+            }
+        }
+    });
+    </script>
 
 <div class="card-header">
     <?php if (!empty(session()->getFlashdata('message'))) : ?>
