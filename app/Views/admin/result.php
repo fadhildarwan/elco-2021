@@ -34,8 +34,15 @@
         </div>
         <hr> <b>Vote Progress :</b> <?php $vote = $result_id/$voters_list*$persen; $output = number_format($vote, 2, '.', ''); echo $output; ?> % atau <?= $result_id; ?> voters dari <?= $voters_list; ?> voters<br>
         <b>Keterangan :</b>
-            <li>Data dihitung dalam persen (%)</li>
+            Data dihitung dalam persen (%)
+            <li><?php foreach($result_paslon->getResult() as $value): ?>
+                Total Paslon 1 (<?php $vote=$value->jumlah/$voters_list*$persen; $output = number_format($vote, 2, '.', ''); echo $output; ?>);
+            <?php endforeach ?></li>
+            <li><?php foreach($result_blank->getResult() as $value): ?>
+                Total Kotak Kosong (<?= $vote=$value->jumlah/$voters_list*$persen; $output = number_format($vote, 2, '.', ''); echo $output; ?>);
+            <?php endforeach ?></li>
             <!-- <li>Pada data di bawah untuk sebelah kiri Paslon 1 dan sebelah kanan Kotak Kosong</li> -->
+            Data dihitung berdasarkan total tanpa persen
             <li><?php foreach($result_paslon->getResult() as $value): ?>
                 Total Paslon 1 (<?= $value->jumlah; ?>);
             <?php endforeach ?></li>
@@ -45,46 +52,7 @@
     </div>
 </div>
 
-    <script src="<?= base_url(); ?>/js/chart.min.js"></script>
-
-    <script>
-    const ctx = document.getElementById('myChart');
-    const data_vote_paslon = [];
     
-    <?php foreach($result_paslon->getResult() as $value): ?>
-        data_vote_paslon.push(<?php $vote = $value->jumlah/$voters_list*$persen; $output = number_format($vote, 2, '.', ''); echo $output; ?>);
-    <?php endforeach ?>
-
-
-    const myChart = new Chart(ctx, {
-        type: 'bar',
-        data: {
-            labels: ['Paslon 1', 'Blank'],
-            datasets: [{
-                label: '<?php $vote = $result_id/$voters_list*$persen; $output = number_format($vote, 2, '.', ''); echo $output; ?> % of Votes',
-                // data: [12, 19],
-                data: [data_vote_paslon],
-                backgroundColor: [
-                    'rgba(255, 99, 132, 0.2)',
-                    'rgba(54, 162, 235, 0.2)',
-                ],
-                borderColor: [
-                    'rgba(255, 99, 132, 1)',
-                    'rgba(54, 162, 235, 1)',
-                ],
-            }]
-        },
-        options: {
-            scales: {
-                y: {
-                    beginAtZero: true,
-                    min: 0,
-                    max: 100,
-                }
-            }
-        }
-    });
-    </script>
 
 
 <div class="card-header">
