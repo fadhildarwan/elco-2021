@@ -57,9 +57,6 @@
     <script>
     const ctx = document.getElementById('myChart');
 
-    const data_paslon = [<?php $vote = $result_paslon/$voters_list*$persen; $output = number_format($vote, 2, '.', ''); echo $output; ?>;]
-    const data_blank = [<?php $vote = $result_blank/$voters_list*$persen; $output = number_format($vote, 2, '.', ''); echo $output; ?>]
-
     const myChart = new Chart(ctx, {
         type: 'bar',
         data: {
@@ -67,7 +64,7 @@
             datasets: [{
                 label: '<?php $vote = $result_id/$voters_list*$persen; $output = number_format($vote, 2, '.', ''); echo $output; ?> % of Votes',
                 // data: [12, 19],
-                data: [data_paslon, data_blank],
+                data: [$result_paslon, $result_blank],
                 backgroundColor: [
                     'rgba(255, 99, 132, 0.2)',
                     'rgba(54, 162, 235, 0.2)',
