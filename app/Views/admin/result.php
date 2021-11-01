@@ -33,13 +33,13 @@
             <canvas id="myChart" width="2106" height="640" style="display: block; width: 1053px; height: 320px;"></canvas>
         </div>
         <hr> <b>Vote Progress :</b> <?php $vote = $result_id/$voters_list*$persen; $output = number_format($vote, 2, '.', ''); echo $output; ?> % atau <?= $result_id; ?> voters dari <?= $voters_list; ?> voters<br>
-        <b>Keterangan :</b>
+        <b>Keterangan :</b><br>
             Data dihitung dalam persen (%)
             <li><?php foreach($result_paslon->getResult() as $value): ?>
                 Total Paslon 1 (<?php $vote=$value->jumlah/$voters_list*$persen; $output = number_format($vote, 2, '.', ''); echo $output; ?>); %
             <?php endforeach ?></li>
             <li><?php foreach($result_blank->getResult() as $value): ?>
-                Total Kotak Kosong (<?= $voter=$value->jumlah/$voters_list*$persen; $output = number_format($voter, 2, '.', ''); echo $output; ?>); %
+                Total Kotak Kosong (<?= $voter=$value->jumlah/$voters_list*$persen; ?>); %
             <?php endforeach ?></li>
             <!-- <li>Pada data di bawah untuk sebelah kiri Paslon 1 dan sebelah kanan Kotak Kosong</li> -->
             Data dihitung berdasarkan total tanpa persen
