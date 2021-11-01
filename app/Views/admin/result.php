@@ -30,36 +30,9 @@
                 </div>
             </div>
         </div>
-            <!-- Earnings (Monthly) Card Example -->
-        <div class="col-xl-3 col-md-6 mb-4">
-            <div class="card border-left-info shadow h-100 py-2">
-                <div class="card-body">
-                    <div class="row no-gutters align-items-center">
-                        <div class="col mr-2">
-                            <div class="text-xs font-weight-bold text-info text-uppercase mb-1">Vote Progress
-                                </div>
-                                <div class="row no-gutters align-items-center">
-                                <div class="col-auto">
-                                    <div class="h5 mb-0 mr-3 font-weight-bold text-gray-800"><?php $vote=$result_paslon/$voters_list*$persen; $output = number_format($vote, 2, '.', ''); echo $output; ?>%</div>
-                                </div>
-                                <div class="col">
-                                    <div class="progress progress-sm mr-2">
-                                        <div class="progress-bar bg-info" role="progressbar" style="width: <?php $vote=$result_paslon/$voters_list*$persen; $output = number_format($vote, 2, '.', ''); echo $output; ?>" aria-valuenow="<?php $vote=$result_paslon/$voters_list*$persen; $output = number_format($vote, 2, '.', ''); echo $output; ?>" aria-valuemin="0" aria-valuemax="100"></div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-auto">
-                            <i class="fas fa-spinner fa-2x text-gray-300"></i>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        </div>
-        <hr> <b>Vote Progress :</b> <?php $vote = $result_id/$voters_list*$persen; $output = number_format($vote, 2, '.', ''); echo $output; ?> % atau <?= $result_id; ?> voters dari <?= $voters_list; ?> voters<br>
+        <b>Vote Progress :</b> <?php $vote = $result_id/$voters_list*$persen; $output = number_format($vote, 2, '.', ''); echo $output; ?> % atau <?= $result_id; ?> voters dari <?= $voters_list; ?> voters<br>
         <b>Keterangan :</b><br>
-            Data dihitung dalam persen (%)
+        Data dihitung dalam persen (%)
             <li><?php foreach($result_paslon->getResult() as $value): ?>
                 Total Paslon 1 (<?php $vote=$value->jumlah/$voters_list*$persen; $output = number_format($vote, 2, '.', ''); echo $output; ?>); %
             <?php endforeach ?></li>
@@ -67,13 +40,14 @@
                 Total Kotak Kosong (<?= $voter=$value->jumlah/$voters_list*$persen; ?>); %
             <?php endforeach ?></li>
             <!-- <li>Pada data di bawah untuk sebelah kiri Paslon 1 dan sebelah kanan Kotak Kosong</li> -->
-            Data dihitung berdasarkan total tanpa persen
+         Data dihitung berdasarkan total tanpa persen
             <li><?php foreach($result_paslon->getResult() as $value): ?>
                 Total Paslon 1 (<?= $value->jumlah; ?>);
             <?php endforeach ?></li>
             <li><?php foreach($result_blank->getResult() as $value): ?>
                 Total Kotak Kosong (<?= $value->jumlah; ?>);
             <?php endforeach ?></li>
+        </div>
     </div>
 </div>
 
