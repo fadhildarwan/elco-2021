@@ -32,8 +32,12 @@
         </ol>
         <p>Data dihitung berdasarkan jumlah</p>
         <ol>
-            <li>Total Paslon 2 (<?= $result_paslon; ?>)</li>
-            <li>Total Kotak Kosong (<?= $result_blank; ?>)</li>
+            <li><?php foreach($result_paslon->getResult() as $value): ?>
+                Total Paslon 1 (<?= $value->jumlah; ?>);
+            <?php endforeach ?></li>
+            <li><?php foreach($result_blank->getResult() as $value): ?>
+                Total Kotak Kosong (<?= $value->jumlah; ?>);
+            <?php endforeach ?></li>
         </ol>
     </div>
 </div>
