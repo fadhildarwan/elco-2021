@@ -16,38 +16,19 @@
 
 <div class="card shadow mb-4">
     <div class="card-header py-3">
-        <h6 class="m-0 font-weight-bold text-primary">Hasil Pemilihan Calon Ketua dan Wakil Ketua Gamapi 2022</h6>
+        <h6 class="m-0 font-weight-bold text-primary">Ketentuan Pemilihan</h6>
     </div>
     <div class="card-body">
-        <div class="chart-bar"><div class="chartjs-size-monitor">
-            <div class="chartjs-size-monitor-expand">
-                <div class="">
-                    <h1></h1>
-                </div>
-            </div>
-            <div class="chartjs-size-monitor-shrink">
-                <div class="">
-                </div>
-            </div>
-        </div>
-        <b>Vote Progress :</b> <?php $vote = $result_id/$voters_list*$persen; $output = number_format($vote, 2, '.', ''); echo $output; ?> % atau <?= $result_id; ?> voters dari <?= $voters_list; ?> voters<br>
-        <b>Keterangan :</b><br>
-        Data dihitung dalam persen (%)
-            <li><?php foreach($result_paslon->getResult() as $value): ?>
-                Total Paslon 1 (<?php $vote=$value->jumlah/$voters_list*$persen; $output = number_format($vote, 2, '.', ''); echo $output; ?>); %
-            <?php endforeach ?></li>
-            <li><?php foreach($result_blank->getResult() as $value): ?>
-                Total Kotak Kosong (<?= $voter=$value->jumlah/$voters_list*$persen; ?>); %
-            <?php endforeach ?></li>
-            <!-- <li>Pada data di bawah untuk sebelah kiri Paslon 1 dan sebelah kanan Kotak Kosong</li> -->
-         Data dihitung berdasarkan total tanpa persen
-            <li><?php foreach($result_paslon->getResult() as $value): ?>
-                Total Paslon 1 (<?= $value->jumlah; ?>);
-            <?php endforeach ?></li>
-            <li><?php foreach($result_blank->getResult() as $value): ?>
-                Total Kotak Kosong (<?= $value->jumlah; ?>);
-            <?php endforeach ?></li>
-        </div>
+        <p><b>Ketentuan dan Cara Pemilihan Calon Ketua dan Wakil Ketua Gamapi 2022</b></p>
+        <ol>
+            <li>Pemilih terdaftar ke dalam daftar pemilih calon Ketua dan Wakil Ketua Gamapi 2022 yang telah ditetapkan oleh Elco</li>
+            <li>Pemilih dapat menggeser ke bawah untuk melakukan pemilihan</li>
+            <li>Pemilih memasukkan <b>"Kode Unik"</b> yang telah dikirimkan oleh Elco</li>
+            <li>Dikarenakan tahun ini hanya terdapat 1 (satu) pasang calon, maka pemilih dapat memilih pasangan calon tersebut atau memilih kotak kosong</li>
+            <li>Pemilih hanya dapat memilih 1 (satu) kali pada waktu yang telah ditetapkan oleh Elco</li>
+            <li>Pemilih yang melakukan pemilihan sebanyak 2 (dua) kali dianggap tidak memiliki suara</li>
+            <li>Pemilih dilarang melakukan tindakan terlarang yang mengganggu pemilihan Elco</li>
+        </ol>
     </div>
 </div>
 
