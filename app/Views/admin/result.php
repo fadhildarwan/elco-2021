@@ -37,10 +37,10 @@
             <li>Data dihitung dalam persen (%)</li>
             <!-- <li>Pada data di bawah untuk sebelah kiri Paslon 1 dan sebelah kanan Kotak Kosong</li> -->
             <li><?php foreach($result_paslon->getResult() as $value): ?>
-                Total Paslon 1 (<?php $value->jumlah; ?>);
+                Total Paslon 1 (<?= $value->jumlah; ?>);
             <?php endforeach ?></li>
             <li><?php foreach($result_blank->getResult() as $value): ?>
-                Total Kotak Kosong (<?php $value->jumlah; ?>);
+                Total Kotak Kosong (<?= $value->jumlah; ?>);
             <?php endforeach ?></li>
     </div>
 </div>
