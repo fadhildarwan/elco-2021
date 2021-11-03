@@ -52,12 +52,12 @@ class Result extends BaseController
         //validasi input
         if(!$this->validate([
             'kode_unik' => [
-                'rules'     => 'required|is_unique[tb_vote.kode_unik]|is_not_unique[tb_voters.kode_unik]',
+                'rules'     => 'required|is_unique[tb_vote.kode_unik]|in_list[7&^Jsh(&]',
                 'errors' => [
                         'required' => 'Kode Unik tidak boleh kosong',
                         'is_unique' => 'Anda telah melakukan pemilihan',
                         'is_not_unique' => 'Anda tidak terdaftar sebagai pemilih',
-                        'in_list'  => 'Anda baru bisa memilih pukul 08.00 WIB pada tanggal 1-3 November 2021',
+                        'in_list'  => 'Anda tidak dapat memilih lagi, Terima Kasih atas partisipasi anda dalam mengikuti rangkaian pemungutan suara Ketua dan Wakil Ketua Gamapi 2022',
                         
                     ]
                 ],
