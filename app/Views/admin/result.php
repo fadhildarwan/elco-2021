@@ -49,13 +49,7 @@
                                     </div>
                                     <div class="col">
                                         <div class="progress progress-sm mr-2">
-                                            <div class="progress-bar bg-info" role="progressbar" style="width: 
-                                            <?php foreach($result_paslon->getResult() as $value): ?>
-                                                <?php $vote=$value->jumlah/$result_id*$persen; $output = number_format($vote, 2, '.', ''); echo $output; ?>
-                                            <?php endforeach ?>" aria-valuenow="
-                                            <?php foreach($result_paslon->getResult() as $value): ?>
-                                                <?php $vote=$value->jumlah/$result_id*$persen; $output = number_format($vote, 2, '.', ''); echo $output; ?>
-                                            <?php endforeach ?>" aria-valuemin="0" aria-valuemax="100"></div>
+                                            <div class="progress-bar bg-info" role="progressbar" style="width: <?php $vote=$result_paslon/$result_id*$persen; $output = number_format($vote, 2, '.', ''); echo $output; ?>;" aria-valuenow="<?php $vote=$result_paslon/$result_id*$persen; $output = number_format($vote, 2, '.', ''); echo $output; ?>" aria-valuemin="0" aria-valuemax="100"></div>
                                         </div>
                                     </div>
                                 </div>
