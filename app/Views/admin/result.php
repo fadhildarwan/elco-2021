@@ -37,15 +37,25 @@
                     <div class="card-body">
                         <div class="row no-gutters align-items-center">
                             <div class="col mr-2">
-                                <div class="text-xs font-weight-bold text-info text-uppercase mb-1">Vote Progress
+                                <div class="text-xs font-weight-bold text-info text-uppercase mb-1">Paslon 1
                                     </div>
                                     <div class="row no-gutters align-items-center">
                                     <div class="col-auto">
-                                        <div class="h5 mb-0 mr-3 font-weight-bold text-gray-800"><?php $vote = $result_id/$voters_list*$persen; $output = number_format($vote, 2, '.', ''); echo $output; ?>%</div>
+                                        <div class="h5 mb-0 mr-3 font-weight-bold text-gray-800">
+                                            <?php foreach($result_paslon->getResult() as $value): ?>
+                                                <?php $vote=$value->jumlah/$result_id*$persen; $output = number_format($vote, 2, '.', ''); echo $output; ?> %
+                                            <?php endforeach ?>
+                                        </div>
                                     </div>
                                     <div class="col">
                                         <div class="progress progress-sm mr-2">
-                                            <div class="progress-bar bg-info" role="progressbar" style="width: <?php $vote = $result_id/$voters_list*$persen; $output = number_format($vote, 2, '.', ''); echo $output; ?>%" aria-valuenow="<?php $vote = $result_id/$voters_list*$persen; $output = number_format($vote, 2, '.', ''); echo $output; ?>" aria-valuemin="0" aria-valuemax="100"></div>
+                                            <div class="progress-bar bg-info" role="progressbar" style="width: 
+                                            <?php foreach($result_paslon->getResult() as $value): ?>
+                                                <?php $vote=$value->jumlah/$result_id*$persen; $output = number_format($vote, 2, '.', ''); echo $output; ?>
+                                            <?php endforeach ?>" aria-valuenow="
+                                            <?php foreach($result_paslon->getResult() as $value): ?>
+                                                <?php $vote=$value->jumlah/$result_id*$persen; $output = number_format($vote, 2, '.', ''); echo $output; ?>
+                                            <?php endforeach ?>" aria-valuemin="0" aria-valuemax="100"></div>
                                         </div>
                                     </div>
                                 </div>
