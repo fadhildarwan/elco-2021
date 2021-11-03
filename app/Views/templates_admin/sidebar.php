@@ -26,6 +26,13 @@
         Voters Access
     </div>
 
+    <!-- Nav Item - Home -->
+    <li class="nav-item">
+        <a class="nav-link" href="<?=base_url()?>">
+            <i class="fas fa-vote-yea"></i>
+            <span>Home</span></a>
+    </li>
+
     <!-- Nav Item - Vote -->
     <li class="nav-item">
         <a class="nav-link" href="<?=base_url('vote')?>">
