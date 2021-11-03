@@ -25,11 +25,11 @@
         <ol>
             <li>
             <?php foreach($result_paslon->getResult() as $value): ?>
-                Total Paslon 1 (<?php $vote=$value->jumlah/$voters_list*$persen; $output = number_format($vote, 2, '.', ''); echo $output; ?>) %
+                Total Paslon 1 (<?php $vote=$value->jumlah/$result_id*$persen; $output = number_format($vote, 2, '.', ''); echo $output; ?>) %
             <?php endforeach ?>
             </li>
             <li><?php foreach($result_blank->getResult() as $value): ?>
-                Total Kotak Kosong (<?= $vote=$value->jumlah/$voters_list*$persen; $hasil = number_format($vote, 2, '.', ''); echo $hasil; ?>) %
+                Total Kotak Kosong (<?= $vote=$value->jumlah/$result_id*$persen; $hasil = number_format($vote, 2, '.', ''); echo $hasil; ?>) %
             <?php endforeach ?></li>
         </ol>
         <p>Data dihitung berdasarkan jumlah</p>
