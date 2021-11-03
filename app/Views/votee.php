@@ -187,26 +187,7 @@
         </div>
     </div>
 
-<div class="card-header">
-    <?php if(session()->getFlashdata('message')) : ?>
-        <div class="alert alert-success alert-dismissible fade show" role="alert">
-            <?= session()->getFlashdata('message'); ?>
-            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-            </button>
-        </div>
-    <?php endif; ?>
-    <?php if (!empty(session()->getFlashdata('error'))) : ?>
-        <div class="alert alert-danger alert-dismissible fade show" role="alert">
-            <h4>Periksa Vote Anda</h4>
-            </hr />
-            <?php echo session()->getFlashdata('error'); ?>
-            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-            </button>
-        </div>
-    <?php endif; ?>
-</div>
+
 
 
 <h3 class="text-center">Anda tidak dapat memilih lagi, Terima Kasih atas partisipasi anda dalam mengikuti rangkaian pemungutan suara Ketua dan Wakil Ketua Gamapi 2022</h3>
