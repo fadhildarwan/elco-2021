@@ -57,14 +57,14 @@
 
     <!-- Nav Item - Result -->
     <li class="nav-item">
-        <a class="nav-link" href="<?=base_url('/admin/result')?>">
+        <a class="nav-link" href="<?=base_url('result')?>">
             <i class="fas fa-poll-h"></i>
             <span>Result</span></a>
     </li>
     
     <!-- Nav Item - Voters -->
     <li class="nav-item">
-        <a class="nav-link" href="<?=base_url('/admin/voters')?>">
+        <a class="nav-link" href="<?=base_url('voters')?>">
             <i class="fas fa-address-book"></i>
             <span>Voters List</span></a>
     </li>
